@@ -4,12 +4,15 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PostTableViewCell: UITableViewCell {
     
     private var viewCounter = 0
 
     // MARK: Visual objects
+    
+    let imageProcessor = ImageProcessor()
     
     var postAuthor: UILabel = {
         let label = UILabel()
@@ -97,6 +100,17 @@ class PostTableViewCell: UITableViewCell {
         postAuthor.text = post.author
         postDescription.text = post.description
         postImage.image = UIImage(named: post.image)
+        
+        imageProcessor.processImage(sourceImage: UIImage(named: post.image)!, filter: .noir) { processedImage in
+            if let image = processedImage {
+                // Обрабатываем полученное изображение
+                DispatchQueue.main.async {
+                    // Используем изображение, например, устанавливаем его в UIImageView
+                    self.postImage.image = image
+                }
+            }
+        }
+        
         postLikes.text = "Likes: \(post.likes)"
         viewCounter = post.views
         postViews.text = "Views: \(viewCounter)"
