@@ -29,6 +29,7 @@
 		86C709324638F31A7B43E9B1 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170B3AB1D350245956FF47A2 /* Pods_Navigation.framework */; };
 		BFA3473B2D71BD95005D70DC /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BFA3473A2D71BD95005D70DC /* iOSIntPackage */; };
 		BFA3473D2D7AE7CB005D70DC /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3473C2D7AE7CB005D70DC /* UserClass.swift */; };
+		BFDE12B02D9A8C200089C8D3 /* CheckerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE12AF2D9A8C200089C8D3 /* CheckerClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		43C8645F2456A9E1B9E784DB /* Pods-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		60FD162166C302742F2790E7 /* Pods-Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.release.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		BFA3473C2D7AE7CB005D70DC /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		BFDE12AF2D9A8C200089C8D3 /* CheckerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				36C5F0602850B723005EFC6C /* PhotosViewController.swift */,
 				36C5F0622850B7B6005EFC6C /* PhotosCollectionViewCell.swift */,
 				BFA3473C2D7AE7CB005D70DC /* UserClass.swift */,
+				BFDE12AF2D9A8C200089C8D3 /* CheckerClass.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				36C5F05E2850B4A6005EFC6C /* PhotoExamples.swift in Sources */,
 				3601A2C7284A776A000D261A /* ProfileHeaderView.swift in Sources */,
 				36C5F0652850C9D1005EFC6C /* PostExamples.swift in Sources */,
+				BFDE12B02D9A8C200089C8D3 /* CheckerClass.swift in Sources */,
 				36C5F0612850B723005EFC6C /* PhotosViewController.swift in Sources */,
 				36528E39284F700900965BA4 /* ExtensionUIImage.swift in Sources */,
 				36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */,

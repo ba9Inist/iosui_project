@@ -91,11 +91,33 @@ final class LoginViewController: UIViewController {
         password.returnKeyType = .done
         return password
     }()
+    
+    
 #if DEBUG
     var currentUser = TestUserService(userTest: User())
 #else
     var currentUser = CurrentUserService(userEntrance: User())
 #endif
+    
+    var loginDelegate: LoginViewControllerDelegate?
+    
+    struct LoginInspector: LoginViewControllerDelegate {
+        func check(loginCheck: String, passCheck: String) -> Bool {
+            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
+        }
+    }
+    
+    protocol LoginFactory {
+        func makeLoginInspector () -> LoginInspector
+    }
+    
+    struct MyLoginFactory: LoginFactory {
+        func makeLoginInspector() -> LoginViewController.LoginInspector {
+            return LoginInspector()
+        }
+    }
+    
+    
     // MARK: - Setup section
     
     override func viewDidLoad() {
@@ -174,14 +196,28 @@ final class LoginViewController: UIViewController {
     
     @objc private func touchLoginButton() {
         
-        let successfulLogin =  currentUser.getUser(byLogin: loginField.text ?? "")
+//        let successfulLogin =  currentUser.getUser(byLogin: loginField.text ?? "")
+//
+//        if successfulLogin == nil {
+//            loginField.text = "Неверный логин"
+//        } else {
+//            let profileVC = ProfileViewController()
+//            navigationController?.setViewControllers([profileVC], animated: true)
+//        }
         
-        if successfulLogin == nil {
-            loginField.text = "Неверный логин"
-        } else {
-            let profileVC = ProfileViewController()
-            navigationController?.setViewControllers([profileVC], animated: true)
+        if let delegate = loginDelegate {
+            let success = delegate.check(loginCheck: loginField.text ?? "", passCheck: passwordField.text ?? "")
+                       
+                       if success {
+                        let profileVC = ProfileViewController()
+                        navigationController?.setViewControllers([profileVC], animated: true)
+                       } else {
+                           let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: "OK", style: .default))
+                           self.present(alert, animated: true, completion: nil)
+                       }
         }
+        
     }
     
     @objc private func keyboardShow(notification: NSNotification) {
