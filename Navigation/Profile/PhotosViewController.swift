@@ -4,10 +4,14 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PhotosViewController: UIViewController {
     
     let photoIdent = "photoCell"
+    private let imgPublisherFacade = ImagePublisherFacade()
+    private var arrayPhotos = Photos.shared.examples
+    private var images: [UIImage] = []
 
     // MARK: Visual objects
     
@@ -38,7 +42,14 @@ class PhotosViewController: UIViewController {
         self.photosCollectionView.dataSource = self
         self.photosCollectionView.delegate = self
         setupConstraints()
+        imgPublisherFacade.subscribe(self)
+        imgPublisherFacade.addImagesWithTimer(time: 0.5, repeat: arrayPhotos.count, userImages: arrayPhotos)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        imgPublisherFacade.removeSubscription(for: self)
+        imgPublisherFacade.rechargeImageLibrary()
+     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -75,7 +86,8 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
 extension PhotosViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Photos.shared.examples.count
+        //return Photos.shared.examples.count
+        return images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,5 +95,18 @@ extension PhotosViewController: UICollectionViewDataSource {
         cell.configCellCollection(photo: Photos.shared.examples[indexPath.item])
         return cell
     }
+}
+
+extension PhotosViewController: ImageLibrarySubscriber {
+    func receive(images: [UIImage]) {
+            let newImages = images.filter { !self.images.contains($0) }
+            if !newImages.isEmpty {
+                self.images.append(contentsOf: newImages)
+
+                DispatchQueue.main.async {
+                    self.photosCollectionView.reloadData()
+                }
+            }
+        }
 }
 
