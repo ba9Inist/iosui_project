@@ -6,10 +6,27 @@
 import UIKit
 
 final class FeedViewController: UIViewController {
-
+    
+    lazy var passUiTextField: UITextField = {
+        let pass = UITextField()
+        pass.translatesAutoresizingMaskIntoConstraints = false
+        pass.layer.cornerRadius = 5
+        pass.backgroundColor = .white
+        return pass
+    }()
+    
+    lazy var checkGuessButton: UIButton = {
+        let button = CustomButton(title: "Проверка пароля",
+                                  titleColor: .white,
+                                  backgroundColor: .orange,
+                                  cornerRadius: 5)
+        button.addTarget(self, action: #selector(tapCustomButton), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemTeal
         
         createSubView()
@@ -30,6 +47,23 @@ final class FeedViewController: UIViewController {
         ])
         addPostButton(title: "Post number One", color: .systemPurple, to: stackView, selector: #selector(tapPostButton))
         addPostButton(title: "Post number Two", color: .systemIndigo, to: stackView, selector: #selector(tapPostButton))
+        
+        view.addSubview(passUiTextField)
+        NSLayoutConstraint.activate([
+            passUiTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            passUiTextField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
+            passUiTextField.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
+            passUiTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        view.addSubview(checkGuessButton)
+        
+        NSLayoutConstraint.activate([
+            checkGuessButton.topAnchor.constraint(equalTo: passUiTextField.bottomAnchor, constant: 15),
+            checkGuessButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
+            checkGuessButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
+            checkGuessButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     private func addPostButton(title: String, color: UIColor, to view: UIStackView, selector: Selector) {
@@ -50,4 +84,15 @@ final class FeedViewController: UIViewController {
         postVC.post = post
         navigationController?.pushViewController(postVC, animated: true)
     }
+    
+    @objc func tapCustomButton() {
+        let checkpass = FeedModel()
+        var success = checkpass.check(word: passUiTextField.text ?? "")
+        if success {
+            checkGuessButton.backgroundColor  = .green
+        } else {
+            checkGuessButton.backgroundColor = .red
+        }
+    }
+    
 }

@@ -42,22 +42,32 @@ final class LoginViewController: UIViewController {
     }()
     
     var loginButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        if let pixel = UIImage(named: "blue_pixel") {
-            button.setBackgroundImage(pixel.image(alpha: 1), for: .normal)
-            button.setBackgroundImage(pixel.image(alpha: 0.8), for: .selected)
-            button.setBackgroundImage(pixel.image(alpha: 0.6), for: .highlighted)
-            button.setBackgroundImage(pixel.image(alpha: 0.4), for: .disabled)
-        }
-        
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        let button = CustomButton(title: "Login",
+                                  titleColor: .white, 
+                                  backgroundColor: .blue,
+                                  cornerRadius: LayoutConstants.cornerRadius)
         button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
-        button.layer.cornerRadius = LayoutConstants.cornerRadius
         button.clipsToBounds = true
+        button.onTap = {
+            print("Кнопка создана с помощью CustomButton")
+        }
         return button
+//        let button = UIButton()
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        if let pixel = UIImage(named: "blue_pixel") {
+//            button.setBackgroundImage(pixel.image(alpha: 1), for: .normal)
+//            button.setBackgroundImage(pixel.image(alpha: 0.8), for: .selected)
+//            button.setBackgroundImage(pixel.image(alpha: 0.6), for: .highlighted)
+//            button.setBackgroundImage(pixel.image(alpha: 0.4), for: .disabled)
+//        }
+//        
+//        button.setTitle("Login", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//        button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
+//        button.layer.cornerRadius = LayoutConstants.cornerRadius
+//        button.clipsToBounds = true
+//        return button
     }()
     
     var loginField: UITextField = {
