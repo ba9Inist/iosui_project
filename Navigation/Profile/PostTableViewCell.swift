@@ -96,7 +96,7 @@ class PostTableViewCell: UITableViewCell {
 
     // MARK: - Run loop
     
-    func configPostArray(post: Post) {
+    func configure(with post: Post) {
         postAuthor.text = post.author
         postDescription.text = post.description
         postImage.image = UIImage(named: post.image)

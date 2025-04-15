@@ -5,9 +5,15 @@
 
 import UIKit
 
+protocol PhotosTableViewCellDelegate: AnyObject {
+    func didTapPhotos()
+}
+
 class PhotosTableViewCell: UITableViewCell {
     
     // MARK: Visual objects
+    
+    weak var delegate: PhotosTableViewCellDelegate?
     
     var labelPhotos: UILabel = {
         let label = UILabel()
@@ -90,5 +96,14 @@ class PhotosTableViewCell: UITableViewCell {
             stackViewImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -LayoutConstants.indentTwelve),
         ])
     }
+    
+    private func setupTapGesture() {
+          let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoTapped))
+          contentView.addGestureRecognizer(tapGesture)
+      }
+
+      @objc private func photoTapped() {
+          delegate?.didTapPhotos()
+      }
 }
 

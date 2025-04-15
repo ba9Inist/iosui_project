@@ -221,7 +221,7 @@ final class LoginViewController: UIViewController {
             let success = delegate.check(loginCheck: loginField.text ?? "", passCheck: passwordField.text ?? "")
                        
                        if success {
-                        let profileVC = ProfileViewController()
+                           let profileVC = ProfileViewController(user: User())
                         navigationController?.setViewControllers([profileVC], animated: true)
                        } else {
                            let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)

@@ -20,7 +20,18 @@ final class ProfileViewController: UIViewController {
         return table
     }()
     
+    private let viewModel: ProfileViewModel
+    
     // MARK: - Setup section
+    
+    init(user: User) {
+         self.viewModel = ProfileViewModel(user: user)
+         super.init(nibName: nil, bundle: nil)
+     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +44,10 @@ final class ProfileViewController: UIViewController {
         Self.postTableView.delegate = self
         Self.postTableView.refreshControl = UIRefreshControl()
         Self.postTableView.refreshControl?.addTarget(self, action: #selector(reloadTableView), for: .valueChanged)
+        
+        setupBindings()
+        viewModel.fetchUserData()
+        viewModel.fetchPosts()
     }
     
     private func setupConstraints() {
@@ -45,9 +60,17 @@ final class ProfileViewController: UIViewController {
     }
 
     @objc func reloadTableView() {
-        Self.postTableView.reloadData()
+        viewModel.fetchPosts()
         Self.postTableView.refreshControl?.endRefreshing()
     }
+    
+    private func setupBindings() {
+         viewModel.onDataUpdated = { [weak self] in
+             DispatchQueue.main.async {
+                 Self.postTableView.reloadData()
+             }
+         }
+     }
 }
 
 // MARK: - Extensions
@@ -78,7 +101,7 @@ extension ProfileViewController: UITableViewDelegate {
             return cell
         case 1:
             let cell = Self.postTableView.dequeueReusableCell(withIdentifier: Self.postIdent, for: indexPath) as! PostTableViewCell
-            cell.configPostArray(post: postExamples[indexPath.row])
+            cell.configure(with: postExamples[indexPath.row])
             return cell
         default:
             assertionFailure("no registered section")
@@ -109,6 +132,13 @@ extension ProfileViewController: UITableViewDelegate {
         default:
             assertionFailure("no registered section")
         }
+    }
+}
+
+extension ProfileViewController: PhotosTableViewCellDelegate {
+    func didTapPhotos() {
+        let photosVC = PhotosViewController()
+        navigationController?.pushViewController(photosVC, animated: true)
     }
 }
 

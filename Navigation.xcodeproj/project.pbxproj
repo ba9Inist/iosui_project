@@ -32,6 +32,8 @@
 		BFDE12B52D9C201D0089C8D3 /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BFDE12B42D9C201D0089C8D3 /* iOSIntPackage */; };
 		BFDE13052DA654E30089C8D3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13042DA654E30089C8D3 /* CustomButton.swift */; };
 		BFDE13082DA6614E0089C8D3 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13072DA6614E0089C8D3 /* FeedModel.swift */; };
+		BFDE13142DAD38570089C8D3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13132DAD38570089C8D3 /* ProfileViewModel.swift */; };
+		BFDE13162DAD441E0089C8D3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13152DAD441E0089C8D3 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		BFDE12AF2D9A8C200089C8D3 /* CheckerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerClass.swift; sourceTree = "<group>"; };
 		BFDE13042DA654E30089C8D3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		BFDE13072DA6614E0089C8D3 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		BFDE13132DAD38570089C8D3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		BFDE13152DAD441E0089C8D3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				36528E3A284F703400965BA4 /* Library */,
 				3601A2C5284A771D000D261A /* Profile */,
 				BFDE13092DA661670089C8D3 /* FeedModule */,
+				BFDE13102DAD379B0089C8D3 /* CustomObjects */,
 				3601A2C32849E232000D261A /* InfoViewController.swift */,
 				3601A2B028490DDF000D261A /* Assets.xcassets */,
 				3601A2B228490DDF000D261A /* LaunchScreen.storyboard */,
@@ -131,9 +136,9 @@
 		3601A2C5284A771D000D261A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				36528E36284F5E3800965BA4 /* LoginViewController.swift */,
 				3601A2C6284A776A000D261A /* ProfileHeaderView.swift */,
-				3601A2BD28494E4F000D261A /* ProfileViewController.swift */,
+				BFDE130F2DAD37640089C8D3 /* ProfileModule_MVVM */,
+				36528E36284F5E3800965BA4 /* LoginViewController.swift */,
 				3601A2BF28495339000D261A /* PostViewController.swift */,
 				36528E3E284FDF9100965BA4 /* PostTableViewCell.swift */,
 				36C5F05B2850B1B1005EFC6C /* PhotosTableViewCell.swift */,
@@ -142,7 +147,6 @@
 				36C5F0622850B7B6005EFC6C /* PhotosCollectionViewCell.swift */,
 				BFA3473C2D7AE7CB005D70DC /* UserClass.swift */,
 				BFDE12AF2D9A8C200089C8D3 /* CheckerClass.swift */,
-				BFDE13042DA654E30089C8D3 /* CustomButton.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -166,6 +170,24 @@
 				BFDE13072DA6614E0089C8D3 /* FeedModel.swift */,
 			);
 			path = FeedModule;
+			sourceTree = "<group>";
+		};
+		BFDE130F2DAD37640089C8D3 /* ProfileModule_MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				3601A2BD28494E4F000D261A /* ProfileViewController.swift */,
+				BFDE13132DAD38570089C8D3 /* ProfileViewModel.swift */,
+				BFDE13152DAD441E0089C8D3 /* ProfileView.swift */,
+			);
+			path = ProfileModule_MVVM;
+			sourceTree = "<group>";
+		};
+		BFDE13102DAD379B0089C8D3 /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				BFDE13042DA654E30089C8D3 /* CustomButton.swift */,
+			);
+			path = CustomObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +327,9 @@
 				36C5F0612850B723005EFC6C /* PhotosViewController.swift in Sources */,
 				36528E39284F700900965BA4 /* ExtensionUIImage.swift in Sources */,
 				36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */,
+				BFDE13162DAD441E0089C8D3 /* ProfileView.swift in Sources */,
 				3601A2C42849E232000D261A /* InfoViewController.swift in Sources */,
+				BFDE13142DAD38570089C8D3 /* ProfileViewModel.swift in Sources */,
 				36C5F0632850B7B6005EFC6C /* PhotosCollectionViewCell.swift in Sources */,
 				3601A2C228495DDF000D261A /* Post.swift in Sources */,
 				36528E3C284F725E00965BA4 /* LayoutConstants.swift in Sources */,
