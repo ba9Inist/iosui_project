@@ -1,0 +1,4 @@
+module iOSIntPackage {
+header "iOSIntPackage-Swift.h"
+export *
+}

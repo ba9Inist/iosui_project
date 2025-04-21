@@ -24,6 +24,9 @@ final class FeedViewController: UIViewController {
         return button
     }()
     
+    var coordinator: FeedCoordinator?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,16 +81,18 @@ final class FeedViewController: UIViewController {
     }
     
     @objc func tapPostButton() {
-        let post = postExamples[0]
         
-        let postVC = PostViewController()
-        postVC.post = post
-        navigationController?.pushViewController(postVC, animated: true)
+        let post = postExamples[0]
+        coordinator?.showPost(with: post)
+        
+//        let postVC = PostViewController()
+//        postVC.post = post
+//        navigationController?.pushViewController(postVC, animated: true)
     }
     
     @objc func tapCustomButton() {
         let checkpass = FeedModel()
-        var success = checkpass.check(word: passUiTextField.text ?? "")
+        let success = checkpass.check(word: passUiTextField.text ?? "")
         if success {
             checkGuessButton.backgroundColor  = .green
         } else {

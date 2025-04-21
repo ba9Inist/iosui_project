@@ -22,6 +22,8 @@ final class ProfileViewController: UIViewController {
     
     private let viewModel: ProfileViewModel
     
+    var coordinator: ProfileCoordinator?
+    
     // MARK: - Setup section
     
     init(user: User) {
@@ -137,8 +139,9 @@ extension ProfileViewController: UITableViewDelegate {
 
 extension ProfileViewController: PhotosTableViewCellDelegate {
     func didTapPhotos() {
-        let photosVC = PhotosViewController()
-        navigationController?.pushViewController(photosVC, animated: true)
+//        let photosVC = PhotosViewController()
+//        navigationController?.pushViewController(photosVC, animated: true)
+        coordinator?.showPhotos()
     }
 }
 

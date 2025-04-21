@@ -113,22 +113,33 @@ final class LoginViewController: UIViewController {
     
     var loginDelegate: LoginViewControllerDelegate?
     
-    struct LoginInspector: LoginViewControllerDelegate {
-        func check(loginCheck: String, passCheck: String) -> Bool {
-            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
-        }
+//    struct LoginInspector: LoginViewControllerDelegate {
+//        func check(loginCheck: String, passCheck: String) -> Bool {
+//            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
+//        }
+//    }
+//    
+//    protocol LoginFactory {
+//        func makeLoginInspector () -> LoginInspector
+//    }
+//    
+//    struct MyLoginFactory: LoginFactory {
+//        func makeLoginInspector() -> LoginViewController.LoginInspector {
+//            return LoginInspector()
+//        }
+//    }
+    
+    var coordinator: ProfileCoordinator?
+    
+    init(loginInspector: LoginViewControllerDelegate, coordinator: ProfileCoordinator){
+        self.loginDelegate = loginInspector
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
     }
     
-    protocol LoginFactory {
-        func makeLoginInspector () -> LoginInspector
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    struct MyLoginFactory: LoginFactory {
-        func makeLoginInspector() -> LoginViewController.LoginInspector {
-            return LoginInspector()
-        }
-    }
-    
     
     // MARK: - Setup section
     
@@ -221,9 +232,14 @@ final class LoginViewController: UIViewController {
             let success = delegate.check(loginCheck: loginField.text ?? "", passCheck: passwordField.text ?? "")
                        
                        if success {
-                           let profileVC = ProfileViewController(user: User())
-                        navigationController?.setViewControllers([profileVC], animated: true)
-                       } else {
+//                           let profileVC = ProfileViewController(user: User())
+//                        navigationController?.setViewControllers([profileVC], animated: true)
+                           
+                           if let coordinator = coordinator {
+                               coordinator.showProfile(for: User())
+                           } else {
+                               print("Coordinator not init")
+                           }
                            let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)
                            alert.addAction(UIAlertAction(title: "OK", style: .default))
                            self.present(alert, animated: true, completion: nil)

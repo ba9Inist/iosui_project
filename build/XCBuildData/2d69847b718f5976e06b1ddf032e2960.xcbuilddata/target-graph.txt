@@ -1,0 +1,9 @@
+Target dependency graph (4 targets)
+Target 'Navigation' in project 'Navigation'
+➜ Explicit dependency on target 'iOSIntPackage' in project 'iOSIntPackage'
+Target 'iOSIntPackage' in project 'iOSIntPackage'
+➜ Explicit dependency on target 'iOSIntPackage' in project 'iOSIntPackage'
+➜ Explicit dependency on target 'iOSIntPackage_iOSIntPackage' in project 'iOSIntPackage'
+Target 'iOSIntPackage' in project 'iOSIntPackage'
+➜ Explicit dependency on target 'iOSIntPackage_iOSIntPackage' in project 'iOSIntPackage'
+Target 'iOSIntPackage_iOSIntPackage' in project 'iOSIntPackage' (no dependencies)

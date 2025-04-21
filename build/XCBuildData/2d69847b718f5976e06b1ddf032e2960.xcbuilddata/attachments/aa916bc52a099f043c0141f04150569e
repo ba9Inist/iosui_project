@@ -1,0 +1,165 @@
+{
+  "" : {
+    "const-values" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master.swiftconstvalues",
+    "dependencies" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master.d",
+    "diagnostics" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master.dia",
+    "emit-module-dependencies" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master-emit-module.dia",
+    "swift-dependencies" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Navigation-master.swiftdeps"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/AppDelegate.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppDelegate.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Coordinators/AppCoorfinator.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppCoorfinator.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppCoorfinator.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/AppCoorfinator.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Coordinators/FeedCoordinator.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedCoordinator.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedCoordinator.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedCoordinator.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Coordinators/LoginCoordinator.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginCoordinator.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginCoordinator.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginCoordinator.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Coordinators/MainCoordinator.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/MainCoordinator.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/MainCoordinator.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/MainCoordinator.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Coordinators/ProfileCoordinator.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileCoordinator.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileCoordinator.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileCoordinator.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/CustomObjects/CustomButton.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CustomButton.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CustomButton.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CustomButton.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/FeedModule/FeedModel.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedModel.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedModel.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedModel.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/FeedModule/FeedViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/FeedViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/InfoViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/InfoViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/InfoViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/InfoViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Library/ExtensionUIImage.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIImage.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIImage.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIImage.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Library/ExtensionUIView.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIView.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIView.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ExtensionUIView.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Library/LayoutConstants.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LayoutConstants.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LayoutConstants.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LayoutConstants.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Library/PhotoExamples.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotoExamples.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotoExamples.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotoExamples.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Library/PostExamples.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostExamples.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostExamples.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostExamples.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/CheckerClass.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CheckerClass.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CheckerClass.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/CheckerClass.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/LoginFactory.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginFactory.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginFactory.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginFactory.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/LoginInspector.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginInspector.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginInspector.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginInspector.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/LoginViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/LoginViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/PhotosCollectionViewCell.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosCollectionViewCell.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosCollectionViewCell.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosCollectionViewCell.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/PhotosTableViewCell.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosTableViewCell.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosTableViewCell.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosTableViewCell.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/PhotosViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PhotosViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/Post.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Post.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Post.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/Post.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/PostTableViewCell.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostTableViewCell.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostTableViewCell.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostTableViewCell.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/PostViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/PostViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/ProfileHeaderView.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileHeaderView.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileHeaderView.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileHeaderView.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/ProfileModule_MVVM/ProfileView.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileView.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileView.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileView.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/ProfileModule_MVVM/ProfileViewController.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewController.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewController.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewController.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/ProfileModule_MVVM/ProfileViewModel.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewModel.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewModel.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/ProfileViewModel.o"
+  },
+  "/Users/egorgolubev/Desktop/iosui_project/Navigation/Profile/UserClass.swift" : {
+    "index-unit-output-path" : "/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/UserClass.o",
+    "llvm-bc" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/UserClass.bc",
+    "object" : "/Users/egorgolubev/Desktop/iosui_project/build/Navigation.build/Release-iphoneos/Navigation.build/Objects-normal/arm64/UserClass.o"
+  }
+}

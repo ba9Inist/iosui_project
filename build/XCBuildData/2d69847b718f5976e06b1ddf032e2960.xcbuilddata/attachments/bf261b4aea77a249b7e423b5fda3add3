@@ -1,0 +1,55 @@
+{
+  "" : {
+    "const-values" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master.swiftconstvalues",
+    "dependencies" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master.d",
+    "diagnostics" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master.dia",
+    "emit-module-dependencies" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master-emit-module.dia",
+    "swift-dependencies" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage-master.swiftdeps"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/Filters.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Filters.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Filters.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Filters.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/ImageProcessor.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageProcessor.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageProcessor.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageProcessor.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/ImagePublisher/ImagePublisher.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisher.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisher.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisher.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/ImagePublisher/ImagePublisherFacade.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisherFacade.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisherFacade.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImagePublisherFacade.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/Images.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Images.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Images.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/Images.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/ImageThread.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageThread.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageThread.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/ImageThread.o"
+  },
+  "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/Sources/iOSIntPackage/iOSIntPackage.swift" : {
+    "index-unit-output-path" : "/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage.o",
+    "llvm-bc" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage.bc",
+    "object" : "/Users/egorgolubev/Library/Developer/Xcode/DerivedData/Navigation-fighwrcefclfmhfogpbkiolvimsz/SourcePackages/checkouts/iOSIntPackage/build/iOSIntPackage.build/Release-iphoneos/iOSIntPackage.build/Objects-normal/arm64/iOSIntPackage.o"
+  }
+}
