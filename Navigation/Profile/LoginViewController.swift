@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController {
     
     var loginButton: UIButton = {
         let button = CustomButton(title: "Login",
-                                  titleColor: .white, 
+                                  titleColor: .white,
                                   backgroundColor: .blue,
                                   cornerRadius: LayoutConstants.cornerRadius)
         button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
@@ -52,22 +52,22 @@ final class LoginViewController: UIViewController {
             print("Кнопка создана с помощью CustomButton")
         }
         return button
-//        let button = UIButton()
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        if let pixel = UIImage(named: "blue_pixel") {
-//            button.setBackgroundImage(pixel.image(alpha: 1), for: .normal)
-//            button.setBackgroundImage(pixel.image(alpha: 0.8), for: .selected)
-//            button.setBackgroundImage(pixel.image(alpha: 0.6), for: .highlighted)
-//            button.setBackgroundImage(pixel.image(alpha: 0.4), for: .disabled)
-//        }
-//        
-//        button.setTitle("Login", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
-//        button.layer.cornerRadius = LayoutConstants.cornerRadius
-//        button.clipsToBounds = true
-//        return button
+        //        let button = UIButton()
+        //        button.translatesAutoresizingMaskIntoConstraints = false
+        //
+        //        if let pixel = UIImage(named: "blue_pixel") {
+        //            button.setBackgroundImage(pixel.image(alpha: 1), for: .normal)
+        //            button.setBackgroundImage(pixel.image(alpha: 0.8), for: .selected)
+        //            button.setBackgroundImage(pixel.image(alpha: 0.6), for: .highlighted)
+        //            button.setBackgroundImage(pixel.image(alpha: 0.4), for: .disabled)
+        //        }
+        //
+        //        button.setTitle("Login", for: .normal)
+        //        button.setTitleColor(.white, for: .normal)
+        //        button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
+        //        button.layer.cornerRadius = LayoutConstants.cornerRadius
+        //        button.clipsToBounds = true
+        //        return button
     }()
     
     var loginField: UITextField = {
@@ -113,21 +113,21 @@ final class LoginViewController: UIViewController {
     
     var loginDelegate: LoginViewControllerDelegate?
     
-//    struct LoginInspector: LoginViewControllerDelegate {
-//        func check(loginCheck: String, passCheck: String) -> Bool {
-//            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
-//        }
-//    }
-//    
-//    protocol LoginFactory {
-//        func makeLoginInspector () -> LoginInspector
-//    }
-//    
-//    struct MyLoginFactory: LoginFactory {
-//        func makeLoginInspector() -> LoginViewController.LoginInspector {
-//            return LoginInspector()
-//        }
-//    }
+    //    struct LoginInspector: LoginViewControllerDelegate {
+    //        func check(loginCheck: String, passCheck: String) -> Bool {
+    //            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
+    //        }
+    //    }
+    //
+    //    protocol LoginFactory {
+    //        func makeLoginInspector () -> LoginInspector
+    //    }
+    //
+    //    struct MyLoginFactory: LoginFactory {
+    //        func makeLoginInspector() -> LoginViewController.LoginInspector {
+    //            return LoginInspector()
+    //        }
+    //    }
     
     var coordinator: ProfileCoordinator?
     
@@ -219,31 +219,32 @@ final class LoginViewController: UIViewController {
     
     @objc private func touchLoginButton() {
         
-//        let successfulLogin =  currentUser.getUser(byLogin: loginField.text ?? "")
-//
-//        if successfulLogin == nil {
-//            loginField.text = "Неверный логин"
-//        } else {
-//            let profileVC = ProfileViewController()
-//            navigationController?.setViewControllers([profileVC], animated: true)
-//        }
+        //        let successfulLogin =  currentUser.getUser(byLogin: loginField.text ?? "")
+        //
+        //        if successfulLogin == nil {
+        //            loginField.text = "Неверный логин"
+        //        } else {
+        //            let profileVC = ProfileViewController()
+        //            navigationController?.setViewControllers([profileVC], animated: true)
+        //        }
         
         if let delegate = loginDelegate {
             let success = delegate.check(loginCheck: loginField.text ?? "", passCheck: passwordField.text ?? "")
-                       
-                       if success {
-//                           let profileVC = ProfileViewController(user: User())
-//                        navigationController?.setViewControllers([profileVC], animated: true)
-                           
-                           if let coordinator = coordinator {
-                               coordinator.showProfile(for: User())
-                           } else {
-                               print("Coordinator not init")
-                           }
-                           let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)
-                           alert.addAction(UIAlertAction(title: "OK", style: .default))
-                           self.present(alert, animated: true, completion: nil)
-                       }
+            
+            if success {
+                //                           let profileVC = ProfileViewController(user: User())
+                //                        navigationController?.setViewControllers([profileVC], animated: true)
+                
+                if let coordinator = coordinator {
+                    coordinator.showProfile(user: User())
+                } else {
+                    print("Coordinator not init")
+                }
+            } else{
+                let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
     }

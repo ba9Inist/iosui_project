@@ -8,6 +8,7 @@ import UIKit
 final class PostViewController: UIViewController {
     
     var post: Post?
+    var coordinator: FeedCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,8 @@ final class PostViewController: UIViewController {
     }
     
     @objc func tapInfoButton() {
-        let infoVC = InfoViewController()
-        present(infoVC, animated: true, completion: nil)
+//        let infoVC = InfoViewController()
+//        present(infoVC, animated: true, completion: nil)
+        coordinator?.present(FeedCoordinator.Presentation.info)
     }
 }

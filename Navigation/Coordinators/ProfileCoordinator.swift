@@ -25,15 +25,7 @@ class ProfileCoordinator: MainCoordinator {
         navigatorController.viewControllers = [loginVC]
         
     }
-    
-    func showProfile (for user: User) {
         
-        let profileVC = ProfileViewController(user: user)
-        profileVC.coordinator = self
-        navigatorController.pushViewController(profileVC, animated: true)
-        
-    }
-    
     func showPhotos() {
         let photoVC = PhotosViewController()
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -45,20 +37,20 @@ class ProfileCoordinator: MainCoordinator {
         }
     }
     
-    func showTabs(user: User) {
+    func showProfile(user: User) {
         let tabBar = UITabBarController()
         let feedCoordinator = FeedCoordinator()
-        feedCoordinator.start()
+        feedCoordinator.setup()
         
         let profileVC = ProfileViewController(user: user)
         profileVC.coordinator = self
         
         let profileNav = UINavigationController(rootViewController: profileVC)
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),tag: 0)
-        let feedNav = feedCoordinator.navigationController
-        feedNav.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.bullet"), tag: 1)
+        let feedNC = feedCoordinator.feedNC
+        feedNC.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.bullet"), tag: 1)
         
-        tabBar.viewControllers = [profileNav, feedNav]
+        tabBar.viewControllers = [profileNav, feedNC]
         tabBar.selectedIndex = 0
         self.tabBarController = tabBar
         
