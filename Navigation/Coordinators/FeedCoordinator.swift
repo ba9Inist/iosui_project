@@ -8,24 +8,54 @@
 import Foundation
 import UIKit
 
-class FeedCoordinator: MainCoordinator {
+protocol Coordinator: AnyObject {
     
-    var childCoordinators: [MainCoordinator] = []
-    let navigationController: UINavigationController
+    var controller: UIViewController { get set }
+    var children: [Coordinator] { get set }
+    
+    func setup()
+}
+
+
+final class FeedCoordinator: Coordinator {
+    var controller: UIViewController
+    
+    var children: [Coordinator]
+    
+    let feedVC = FeedViewController()
+    let feedNC: UINavigationController
+    
+    enum Presentation {
+        case post
+        case info
+    }
     
     init() {
-        self.navigationController = UINavigationController()
+        children = []
+                
+        feedNC = UINavigationController(rootViewController: feedVC)
+        feedNC.tabBarItem = UITabBarItem(title: "Feed",
+                                         image: UIImage(systemName: "text.bubble"),
+                                         selectedImage: UIImage(systemName: "text.bubble.fill"))
+        controller = feedNC
     }
     
-    func start() {
-        let feedVC = FeedViewController()
+    func setup() {
         feedVC.coordinator = self
-        navigationController.viewControllers = [feedVC]
     }
     
-    func showPost(with post: Post) {
-        let postVC = PostViewController()
-        navigationController.pushViewController(postVC, animated: true)
+    func present(_ presentation: Presentation) {
+        switch presentation {
+        case .post:
+            let post = postExamples[0]
+            
+            let postVC = PostViewController()
+            postVC.coordinator = self
+            postVC.post = post
+            feedNC.pushViewController(postVC, animated: true)
+        case .info:
+            let infoVC = InfoViewController()
+            feedNC.present(infoVC, animated: true, completion: nil)
+        }
     }
-    
 }

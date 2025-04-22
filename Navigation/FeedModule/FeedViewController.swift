@@ -82,8 +82,9 @@ final class FeedViewController: UIViewController {
     
     @objc func tapPostButton() {
         
-        let post = postExamples[0]
-        coordinator?.showPost(with: post)
+//        let post = postExamples[0]
+//        coordinator?.showPost(with: post)
+        coordinator?.present(FeedCoordinator.Presentation.post)
         
 //        let postVC = PostViewController()
 //        postVC.post = post
