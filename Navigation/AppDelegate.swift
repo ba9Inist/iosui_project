@@ -45,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
+        DispatchQueue.main.async {
+            NetworkService.request(for: AppConfiguration.oneURL)
+        }
         return true
         
         
