@@ -6,16 +6,8 @@
 import UIKit
 
 final class InfoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = .systemGray6
-        
-        createAlertButton()
-    }
     
-    private func createAlertButton() {
+    private lazy var buttonAlert: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Alert", for: .normal)
@@ -23,17 +15,62 @@ final class InfoViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = LayoutConstants.cornerRadius
         button.addTarget(self, action: #selector(tapAlertButton), for: .touchUpInside)
-                
-        view.addSubview(button)
+        return button
+    }()
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Test"
+        return label
+    }()
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = .systemGray6
+        view.addSubview(buttonAlert)
+        view.addSubview(label)
+        setupConstraints()
         
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.widthAnchor.constraint(equalToConstant: 100)
-        ])
+        DispatchQueue.main.async {
+            NetworkService.request(for: AppConfiguration.fiveURL) { [weak self] userModel in
+                if let userModel = userModel {
+                    DispatchQueue.main.async {
+                        self?.label.text = userModel.title
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.label.text = "Text undefined"
+                    }
+                }
+            }
+        }
+        
+
     }
     
+    private func setupConstraints(){
+        
+        NSLayoutConstraint.activate([
+            
+            buttonAlert.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            buttonAlert.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            buttonAlert.heightAnchor.constraint(equalToConstant: 50),
+            buttonAlert.widthAnchor.constraint(equalToConstant: 100),
+            
+            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50),
+            label.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 110),
+            label.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 30),
+            label.heightAnchor.constraint(equalToConstant: 30),
+            label.widthAnchor.constraint(equalToConstant: 100)
+            
+        ])
+        
+    }
+
     @objc func tapAlertButton() {
         let alert = UIAlertController(title: "Attention",
                                       message: "How are you feeling?",
