@@ -4,6 +4,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,42 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        // create tab bar with feed and profile items
-//        let loginVC = LoginViewController()
-//        //loginVC.loginDelegate = LoginViewController.LoginInspector()
-//        loginVC.loginDelegate = LoginViewController.MyLoginFactory().makeLoginInspector()
-//        let profileNC = UINavigationController(rootViewController: loginVC)
-//        profileNC.tabBarItem = UITabBarItem(title: "Profile",
-//                                            image: UIImage(systemName: "person.crop.circle"),
-//                                            selectedImage: UIImage(systemName: "person.crop.circle.fill"))
-//        
-//        let feedVC = FeedViewController()
-//        let feedNC = UINavigationController(rootViewController: feedVC)
-//        feedNC.tabBarItem = UITabBarItem(title: "Feed",
-//                                         image: UIImage(systemName: "text.bubble"),
-//                                         selectedImage: UIImage(systemName: "text.bubble.fill"))
-//
-//        let tabBarController = UITabBarController()
-//        tabBarController.tabBar.backgroundColor = .white
-//        tabBarController.viewControllers = [profileNC, feedNC]
-//        
-//        // activate main window
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = tabBarController
-//        window?.makeKeyAndVisible()
-//        
-//        return true
-        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
-//        DispatchQueue.main.async {
-//            NetworkService.request(for: AppConfiguration.foURL)
-//        }
+        FirebaseApp.configure()
         return true
         
         
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error signing out:", error.localizedDescription)
+        }
     }
 }
 

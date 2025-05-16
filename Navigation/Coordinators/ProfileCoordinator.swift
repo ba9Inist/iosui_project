@@ -21,7 +21,7 @@ class ProfileCoordinator: MainCoordinator {
     func start() {
         
         let loginInspector = MyLoginFactory().makeLoginInspector()
-        let loginVC = LoginViewController(loginInspector: loginInspector, coordinator:  self)
+        let loginVC = LoginViewController(loginInspector: loginInspector, coordinator: self)
         navigatorController.viewControllers = [loginVC]
         
     }

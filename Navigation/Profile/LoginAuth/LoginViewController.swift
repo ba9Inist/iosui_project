@@ -4,31 +4,33 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SnapKit
 
 final class LoginViewController: UIViewController {
     
     // MARK: Visual content
     
-    var loginScrollView: UIScrollView = {
+    private lazy var loginScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
-    var contentView: UIView = {
+    private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var vkLogo: UIImageView = {
+    private lazy var vkLogo: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "vkLogo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    var loginStackView: UIStackView = {
+    private lazy var loginStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -41,7 +43,7 @@ final class LoginViewController: UIViewController {
         return stack
     }()
     
-    var loginButton: UIButton = {
+   private lazy var loginButton: UIButton = {
         let button = CustomButton(title: "Login",
                                   titleColor: .white,
                                   backgroundColor: .blue,
@@ -52,28 +54,22 @@ final class LoginViewController: UIViewController {
             print("Кнопка создана с помощью CustomButton")
         }
         return button
-        //        let button = UIButton()
-        //        button.translatesAutoresizingMaskIntoConstraints = false
-        //
-        //        if let pixel = UIImage(named: "blue_pixel") {
-        //            button.setBackgroundImage(pixel.image(alpha: 1), for: .normal)
-        //            button.setBackgroundImage(pixel.image(alpha: 0.8), for: .selected)
-        //            button.setBackgroundImage(pixel.image(alpha: 0.6), for: .highlighted)
-        //            button.setBackgroundImage(pixel.image(alpha: 0.4), for: .disabled)
-        //        }
-        //
-        //        button.setTitle("Login", for: .normal)
-        //        button.setTitleColor(.white, for: .normal)
-        //        button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
-        //        button.layer.cornerRadius = LayoutConstants.cornerRadius
-        //        button.clipsToBounds = true
-        //        return button
     }()
     
-    var loginField: UITextField = {
+    private lazy var regButton: UIButton = {
+         let button = CustomButton(title: "Register User",
+                                   titleColor: .white,
+                                   backgroundColor: .blue,
+                                   cornerRadius: LayoutConstants.cornerRadius)
+         button.addTarget(nil, action: #selector(touchRegButton), for: .touchUpInside)
+         button.clipsToBounds = true
+         return button
+     }()
+    
+   private lazy var loginField: UITextField = {
         let login = UITextField()
         login.translatesAutoresizingMaskIntoConstraints = false
-        login.text = "admin"
+        login.text = "test@mail.ru"
         login.placeholder = "Log In"
         login.layer.borderColor = UIColor.lightGray.cgColor
         login.layer.borderWidth = 0.25
@@ -87,11 +83,11 @@ final class LoginViewController: UIViewController {
         return login
     }()
     
-    var passwordField: UITextField = {
+   private lazy var passwordField: UITextField = {
         let password = UITextField()
         password.translatesAutoresizingMaskIntoConstraints = false
         password.leftViewMode = .always
-        password.text = "123"
+        password.text = "qwerty123"
         password.placeholder = "Password"
         password.layer.borderColor = UIColor.lightGray.cgColor
         password.layer.borderWidth = 0.25
@@ -111,28 +107,11 @@ final class LoginViewController: UIViewController {
     var currentUser = CurrentUserService(userEntrance: User())
 #endif
     
-    var loginDelegate: LoginViewControllerDelegate?
-    
-    //    struct LoginInspector: LoginViewControllerDelegate {
-    //        func check(loginCheck: String, passCheck: String) -> Bool {
-    //            return Checker.check(loginCheck: loginCheck, passCheck: passCheck)
-    //        }
-    //    }
-    //
-    //    protocol LoginFactory {
-    //        func makeLoginInspector () -> LoginInspector
-    //    }
-    //
-    //    struct MyLoginFactory: LoginFactory {
-    //        func makeLoginInspector() -> LoginViewController.LoginInspector {
-    //            return LoginInspector()
-    //        }
-    //    }
-    
+    private var loginInspector = LoginInspector()
     var coordinator: ProfileCoordinator?
     
-    init(loginInspector: LoginViewControllerDelegate, coordinator: ProfileCoordinator){
-        self.loginDelegate = loginInspector
+    init(loginInspector: LoginInspector, coordinator: ProfileCoordinator){
+        self.loginInspector = loginInspector
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -156,7 +135,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(loginScrollView)
         loginScrollView.addSubview(contentView)
         
-        contentView.addSubviews(vkLogo, loginStackView, loginButton)
+        contentView.addSubviews(vkLogo, loginStackView, loginButton, regButton)
         
         loginStackView.addArrangedSubview(loginField)
         loginStackView.addArrangedSubview(passwordField)
@@ -197,6 +176,16 @@ final class LoginViewController: UIViewController {
             loginButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: LayoutConstants.trailingMargin),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+        
+        //SnapKit
+        
+        regButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).inset(-15)
+            $0.left.equalTo(contentView.snp.left).inset(LayoutConstants.leadingMargin)
+            $0.right.equalTo(contentView.snp.right).inset(LayoutConstants.leadingMargin)
+            $0.height.equalTo(50)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -219,36 +208,66 @@ final class LoginViewController: UIViewController {
     
     @objc private func touchLoginButton() {
         
-        //        let successfulLogin =  currentUser.getUser(byLogin: loginField.text ?? "")
-        //
-        //        if successfulLogin == nil {
-        //            loginField.text = "Неверный логин"
-        //        } else {
-        //            let profileVC = ProfileViewController()
-        //            navigationController?.setViewControllers([profileVC], animated: true)
-        //        }
-        
-        if let delegate = loginDelegate {
-            let success = delegate.check(loginCheck: loginField.text ?? "", passCheck: passwordField.text ?? "")
+            loginField.backgroundColor = .clear
+            passwordField.backgroundColor  = .clear
             
-            if success {
-                //                           let profileVC = ProfileViewController(user: User())
-                //                        navigationController?.setViewControllers([profileVC], animated: true)
-                
-                if let coordinator = coordinator {
+            guard !(loginField.text?.isEmpty ?? true) else {
+                loginField.backgroundColor = .systemRed
+                return
+            }
+            guard !(passwordField.text?.isEmpty ?? true) else {
+                passwordField.backgroundColor = .systemRed
+                return
+            }
+            
+        loginInspector.checkCredentials(email: loginField.text ?? "", password: passwordField.text ?? "") { result in
+        
+            if result {
+                if let coordinator = self.coordinator {
                     coordinator.showProfile(user: User())
                 } else {
                     print("Coordinator not init")
                 }
-            } else{
-                let alert = UIAlertController(title: "Предупреждение", message: "Неверный логин или пароль", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
+            } else {
+                
             }
+            
+        }
+                
+
+            
+    }
+    
+    @objc private func touchRegButton() {
+        
+        loginField.backgroundColor = .clear
+        passwordField.backgroundColor  = .clear
+        
+        guard !(loginField.text?.isEmpty ?? true) else {
+            loginField.backgroundColor = .systemRed
+            return
+        }
+        guard !(passwordField.text?.isEmpty ?? true) else {
+            passwordField.backgroundColor = .systemRed
+            return
+        }
+        
+        loginInspector.signUp(email: loginField.text ?? "", password: passwordField.text ?? "") { result in
+    
+        if result {
+            if let coordinator = self.coordinator {
+                coordinator.showProfile(user: User())
+            } else {
+                print("Coordinator not init")
+            }
+        } else {
+            
         }
         
     }
-    
+                
+    }
+        
     @objc private func keyboardShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             loginScrollView.contentOffset.y = keyboardSize.height - (loginScrollView.frame.height - loginButton.frame.minY)
