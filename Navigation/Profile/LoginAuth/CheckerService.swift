@@ -18,24 +18,25 @@ protocol CheckerServiceProtocol {
 class Checker: CheckerServiceProtocol {
     func checkCredentials(email: String, password: String, completion: @escaping ((Bool) -> Void)) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if (error != nil) {
-                let err = error! as NSError
-                switch err.code {
-                case AuthErrorCode.emailAlreadyInUse.rawValue:
-                    self.setubAlert(title: "Предупрежение", sms: "Email некоректный", type: .alert)
-                case AuthErrorCode.userNotFound.rawValue:
-                    self.setubAlert(title: "Предупреждение", sms: "Пользователь не найден", type: .alert)
-                case AuthErrorCode.wrongPassword.rawValue:
-                    self.setubAlert(title: "Предупрежение", sms: "Пароль неверный", type: .alert)
-                    
-                default:
-                    break
-                }
-                self.setubAlert(title: "Предупреждение", sms: error?.localizedDescription ?? "", type: .alert)
-                completion(false)
-            } else {
-                completion(true)
-            }
+            
+            if error != nil, let error = error as NSError? {
+                            if let errorCode = AuthErrorCode(rawValue: error.code) {
+                                switch errorCode {
+                                case .invalidCredential:
+                                    self.setubAlert(title: "Предупреждение", sms: "Пользователь не найден", type: .alert)
+                                case .emailAlreadyInUse:
+                                    self.setubAlert(title: "Предупрежение", sms: "Email некоректный", type: .alert)
+                                case .wrongPassword:
+                                    self.setubAlert(title: "Предупрежение", sms: "Пароль неверный", type: .alert)
+                                default:
+                                    break
+                                }
+                                completion(false)
+                            }
+                        } else {
+                            completion(true)
+                        }
+            
         }
     }
     
