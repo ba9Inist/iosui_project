@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Photos
 
-class DirectoryVC: UIViewController {
+class DirectoryVC: UIViewController, RefreshTableViewProtocol {
     
     private lazy var fileManager = FileManagerService(path: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
     
@@ -29,8 +29,15 @@ class DirectoryVC: UIViewController {
         tableView.dataSource = self
         tableView.register(CustomCellTableViewDirectory.self, forCellReuseIdentifier: "customCell")
         tableView.rowHeight = 300
+        tableView.refreshControl = refreshControl
         return tableView
         
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        return refresh
     }()
     
     private lazy var photoPicker: UIImagePickerController = {
@@ -62,6 +69,11 @@ class DirectoryVC: UIViewController {
         
     }
     
+    @objc private func refreshTable() {
+        refreshTableView()
+        refreshControl.endRefreshing()
+    }
+    
     @objc private func tapAddPhoto(){
         let accessPhotoGallery = AccessPhoto()
         accessPhotoGallery.requestGalleryAccess { [weak self] access in
@@ -77,6 +89,13 @@ class DirectoryVC: UIViewController {
         }
     }
     
+    func refreshTableView() {
+        DispatchQueue.main.async {
+            self.fileManager.loadArray()
+            self.tableView.reloadData()
+        }
+    }
+
 }
 
 extension DirectoryVC: UITableViewDataSource {
@@ -137,3 +156,6 @@ extension DirectoryVC: UIImagePickerControllerDelegate {
     }
 }
 
+protocol RefreshTableViewProtocol: AnyObject {
+    func refreshTableView()
+}

@@ -49,6 +49,11 @@
 		BFDE13242DB643B40089C8D3 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13232DB643B40089C8D3 /* LoginCoordinator.swift */; };
 		BFDE13262DB643D90089C8D3 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13252DB643D90089C8D3 /* ProfileCoordinator.swift */; };
 		BFDE13282DB658D60089C8D3 /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE13272DB658D60089C8D3 /* LoginInspector.swift */; };
+		BFE56B872DE6FED9004B3027 /* LoginKeyChainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE56B862DE6FED9004B3027 /* LoginKeyChainVC.swift */; };
+		BFE56B8A2DE706A5004B3027 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BFE56B892DE706A5004B3027 /* KeychainAccess */; };
+		BFE56B8C2DE70D06004B3027 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE56B8B2DE70D06004B3027 /* CustomAlert.swift */; };
+		BFE56B8F2DE71761004B3027 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE56B8E2DE71761004B3027 /* TabBarVC.swift */; };
+		BFE56B912DE717CA004B3027 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE56B902DE717CA004B3027 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +100,10 @@
 		BFDE13232DB643B40089C8D3 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BFDE13252DB643D90089C8D3 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		BFDE13272DB658D60089C8D3 /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
+		BFE56B862DE6FED9004B3027 /* LoginKeyChainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeyChainVC.swift; sourceTree = "<group>"; };
+		BFE56B8B2DE70D06004B3027 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		BFE56B8E2DE71761004B3027 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		BFE56B902DE717CA004B3027 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 				86C709324638F31A7B43E9B1 /* Pods_Navigation.framework in Frameworks */,
 				BF6FBDB02DD5F78600BCE5A4 /* FirebaseAuth in Frameworks */,
 				BF6FBDB42DD5F7BF00BCE5A4 /* iOSIntPackage in Frameworks */,
+				BFE56B8A2DE706A5004B3027 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +183,7 @@
 			children = (
 				3601A2C6284A776A000D261A /* ProfileHeaderView.swift */,
 				3601A2C32849E232000D261A /* InfoViewController.swift */,
+				BFE56B852DE6FEAA004B3027 /* LoginAuthKeyChain */,
 				BF6FBDA52DD5BFC600BCE5A4 /* LoginAuth */,
 				BFDE130F2DAD37640089C8D3 /* ProfileModule_MVVM */,
 				BF6FBDA62DD5C00400BCE5A4 /* PostModule */,
@@ -274,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				BFDE13042DA654E30089C8D3 /* CustomButton.swift */,
+				BFE56B8B2DE70D06004B3027 /* CustomAlert.swift */,
 			);
 			path = CustomObjects;
 			sourceTree = "<group>";
@@ -288,6 +300,16 @@
 				BFDE13232DB643B40089C8D3 /* LoginCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BFE56B852DE6FEAA004B3027 /* LoginAuthKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				BFE56B862DE6FED9004B3027 /* LoginKeyChainVC.swift */,
+				BFE56B8E2DE71761004B3027 /* TabBarVC.swift */,
+				BFE56B902DE717CA004B3027 /* SettingsVC.swift */,
+			);
+			path = LoginAuthKeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +334,7 @@
 				BF6FBDAF2DD5F78600BCE5A4 /* FirebaseAuth */,
 				BF6FBDB12DD5F78600BCE5A4 /* FirebaseDatabase */,
 				BF6FBDB32DD5F7BF00BCE5A4 /* iOSIntPackage */,
+				BFE56B892DE706A5004B3027 /* KeychainAccess */,
 			);
 			productName = Navigation;
 			productReference = 3601A2A428490DDF000D261A /* Navigation.app */;
@@ -344,6 +367,7 @@
 			packageReferences = (
 				BFDE12B32D9C201D0089C8D3 /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
 				BF6FBDA82DD5C1FE00BCE5A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BFE56B882DE706A5004B3027 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3601A2A528490DDF000D261A /* Products */;
 			projectDirPath = "";
@@ -420,6 +444,7 @@
 				3601A2BE28494E4F000D261A /* ProfileViewController.swift in Sources */,
 				3601A2A828490DDF000D261A /* AppDelegate.swift in Sources */,
 				BFC069C62DBF827000306321 /* StructUserModel.swift in Sources */,
+				BFE56B8C2DE70D06004B3027 /* CustomAlert.swift in Sources */,
 				BFDE13082DA6614E0089C8D3 /* FeedModel.swift in Sources */,
 				BFDE13242DB643B40089C8D3 /* LoginCoordinator.swift in Sources */,
 				BFDE13052DA654E30089C8D3 /* CustomButton.swift in Sources */,
@@ -439,11 +464,14 @@
 				BF6FBDBE2DDF348400BCE5A4 /* AccessPhoto.swift in Sources */,
 				36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */,
 				BF6FBDC02DDF4B9E00BCE5A4 /* FileManagerService.swift in Sources */,
+				BFE56B912DE717CA004B3027 /* SettingsVC.swift in Sources */,
 				BFDE13162DAD441E0089C8D3 /* ProfileView.swift in Sources */,
 				3601A2C42849E232000D261A /* InfoViewController.swift in Sources */,
+				BFE56B8F2DE71761004B3027 /* TabBarVC.swift in Sources */,
 				BFDE13202DB642D40089C8D3 /* AppCoorfinator.swift in Sources */,
 				BFDE13142DAD38570089C8D3 /* ProfileViewModel.swift in Sources */,
 				BF6FBDB92DDF23E300BCE5A4 /* DirectoryVC.swift in Sources */,
+				BFE56B872DE6FED9004B3027 /* LoginKeyChainVC.swift in Sources */,
 				BFDE13222DB6439C0089C8D3 /* FeedCoordinator.swift in Sources */,
 				36C5F0632850B7B6005EFC6C /* PhotosCollectionViewCell.swift in Sources */,
 				BFA5D63A2DBA3B3A009CEF5D /* NetworkService.swift in Sources */,
@@ -684,6 +712,14 @@
 				kind = branch;
 			};
 		};
+		BFE56B882DE706A5004B3027 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -701,6 +737,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BFDE12B32D9C201D0089C8D3 /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
 			productName = iOSIntPackage;
+		};
+		BFE56B892DE706A5004B3027 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFE56B882DE706A5004B3027 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -28,6 +28,15 @@ final class FileManagerService {
                 atPath: path
             )
             photoArray = files.filter({ $0.hasSuffix(".jpg") })
+            let sort = UserDefaults.standard.integer(forKey: "selectedIndex")
+            switch sort {
+            case 0:
+                photoArray.sort()
+            case 1:
+                photoArray.sort(by: >)
+            default:
+                break
+            }
         } catch {
             print(error.localizedDescription)
         }

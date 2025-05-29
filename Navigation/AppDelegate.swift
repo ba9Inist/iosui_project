@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        let navController = UINavigationController(rootViewController: DirectoryVC())
+        let navController = UINavigationController(rootViewController: LoginKeyChainVC())
         window.rootViewController = navController
         window.makeKeyAndVisible()
         /*
