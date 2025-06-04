@@ -11,5 +11,6 @@ struct Post {
     let image: String
     let likes: Int
     let views: Int
+    let id: String
 }
 

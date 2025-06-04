@@ -7,6 +7,8 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
+    
+    
     static let headerIdent = "header"
     static let photoIdent = "photo"
     static let postIdent = "post"
@@ -27,9 +29,9 @@ final class ProfileViewController: UIViewController {
     // MARK: - Setup section
     
     init(user: User) {
-         self.viewModel = ProfileViewModel(user: user)
-         super.init(nibName: nil, bundle: nil)
-     }
+        self.viewModel = ProfileViewModel(user: user)
+        super.init(nibName: nil, bundle: nil)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -37,7 +39,7 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         
         view.addSubview(Self.postTableView)
@@ -60,25 +62,39 @@ final class ProfileViewController: UIViewController {
             Self.postTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
+    
     @objc func reloadTableView() {
         viewModel.fetchPosts()
         Self.postTableView.refreshControl?.endRefreshing()
     }
     
     private func setupBindings() {
-         viewModel.onDataUpdated = { [weak self] in
-             DispatchQueue.main.async {
-                 Self.postTableView.reloadData()
-             }
-         }
-     }
+        viewModel.onDataUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                Self.postTableView.reloadData()
+            }
+        }
+    }
+    
+    private func configureTwoTapGesture(for cell: UITableViewCell) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(twoTapCell(_:)))
+        tapGesture.numberOfTapsRequired = 2
+        cell.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func twoTapCell(_ sender: UITapGestureRecognizer) {
+        guard let cell = sender.view as? UITableViewCell,
+              let indexPath = Self.postTableView.indexPath(for: cell) else { return }
+        
+        let post = postExamples[indexPath.row]
+        CoreDataManager.shared.savePost(post: post)
+    }
 }
 
 // MARK: - Extensions
 
 extension ProfileViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
@@ -88,7 +104,7 @@ extension ProfileViewController: UITableViewDataSource {
             return 1
         }
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -100,27 +116,29 @@ extension ProfileViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = Self.postTableView.dequeueReusableCell(withIdentifier: Self.photoIdent, for: indexPath) as! PhotosTableViewCell
+            configureTwoTapGesture(for: cell)
             return cell
         case 1:
             let cell = Self.postTableView.dequeueReusableCell(withIdentifier: Self.postIdent, for: indexPath) as! PostTableViewCell
             cell.configure(with: postExamples[indexPath.row])
+            configureTwoTapGesture(for: cell)
             return cell
         default:
             assertionFailure("no registered section")
             return UITableViewCell()
         }
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 else { return nil }
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Self.headerIdent) as! ProfileHeaderView
         return headerView
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 220 : 0
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
@@ -139,8 +157,8 @@ extension ProfileViewController: UITableViewDelegate {
 
 extension ProfileViewController: PhotosTableViewCellDelegate {
     func didTapPhotos() {
-//        let photosVC = PhotosViewController()
-//        navigationController?.pushViewController(photosVC, animated: true)
+        //        let photosVC = PhotosViewController()
+        //        navigationController?.pushViewController(photosVC, animated: true)
         coordinator?.showPhotos()
     }
 }

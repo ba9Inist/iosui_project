@@ -47,8 +47,6 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
     }
     
     private func setupNameLabel() {
-        //fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        //fullNameLabel.text = "Teo West"
         fullNameLabel.text = userInfo.fullName
         fullNameLabel.font = .boldSystemFont(ofSize: 18)
         fullNameLabel.textColor = .black
@@ -60,17 +58,10 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             make.height.equalTo(28)
             
         }
-        //        NSLayoutConstraint.activate([
-        //            fullNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-        //            fullNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 156),
-        //            fullNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-        //            fullNameLabel.heightAnchor.constraint(equalToConstant: 28),
-        //        ])
+
     }
     
     private func setupStatusLabel() {
-        //statusLabel.translatesAutoresizingMaskIntoConstraints = false
-        //        statusLabel.text = statusText
         statusLabel.text = userInfo.statusProfile
         statusLabel.font = .systemFont(ofSize: 17)
         statusLabel.textColor = .black
@@ -83,17 +74,9 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             make.height.equalTo(fullNameLabel)
             
         }
-        
-        //        NSLayoutConstraint.activate([
-        //            statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 16),
-        //            statusLabel.leadingAnchor.constraint(equalTo: fullNameLabel.leadingAnchor),
-        //            statusLabel.trailingAnchor.constraint(equalTo: fullNameLabel.trailingAnchor),
-        //            statusLabel.heightAnchor.constraint(equalTo: fullNameLabel.heightAnchor),
-        //        ])
     }
     
     private func setupStatusTextField() {
-        //statusTextField.translatesAutoresizingMaskIntoConstraints = false
         statusTextField.textColor = .darkGray
         statusTextField.backgroundColor = .white
         
@@ -114,13 +97,6 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             make.height.equalTo(32)
             
         }
-        
-        //        NSLayoutConstraint.activate([
-        //            statusTextField.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 16),
-        //            statusTextField.leadingAnchor.constraint(equalTo: fullNameLabel.leadingAnchor),
-        //            statusTextField.trailingAnchor.constraint(equalTo: fullNameLabel.trailingAnchor),
-        //            statusTextField.heightAnchor.constraint(equalToConstant: 32),
-        //        ])
     }
     
     private func setupStatusButton() {
@@ -144,18 +120,9 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             make.height.equalTo(48)
             
         }
-        
-        //        NSLayoutConstraint.activate([
-        //            setStatusButton.topAnchor.constraint(equalTo: statusTextField.bottomAnchor, constant: 16),
-        //            setStatusButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-        //            setStatusButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-        //            setStatusButton.heightAnchor.constraint(equalToConstant: 48),
-        //        ])
     }
     
     private func setupAvatarImage() {
-        // avatarImageView.translatesAutoresizingMaskIntoConstraints = false
-        //avatarImageView.image = UIImage(named: "teo")
         avatarImageView.image = userInfo.imgProfile
         avatarImageView.layer.cornerRadius = 64
         avatarImageView.layer.borderWidth = 3
@@ -168,9 +135,6 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
         tapGesture.numberOfTouchesRequired = 1
         avatarImageView.isUserInteractionEnabled = true
         avatarImageView.addGestureRecognizer(tapGesture)
-        
-        // cancel an animation mode
-        //returnAvatarButton.translatesAutoresizingMaskIntoConstraints = false
         returnAvatarButton.alpha = 0
         returnAvatarButton.backgroundColor = .clear
         returnAvatarButton.contentMode = .scaleToFill
@@ -200,16 +164,6 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             
         }
         
-        
-        //        NSLayoutConstraint.activate([
-        //            avatarImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-        //            avatarImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-        //            avatarImageView.widthAnchor.constraint(equalToConstant: 128),
-        //            avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
-        //
-        //            returnAvatarButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-        //            returnAvatarButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-        //        ])
     }
     
     // MARK: - Event handlers

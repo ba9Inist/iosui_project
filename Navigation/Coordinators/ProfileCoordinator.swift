@@ -45,12 +45,15 @@ class ProfileCoordinator: MainCoordinator {
         let profileVC = ProfileViewController(user: user)
         profileVC.coordinator = self
         
-        let profileNav = UINavigationController(rootViewController: profileVC)
-        profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),tag: 0)
+        let profileNC = UINavigationController(rootViewController: profileVC)
+        profileNC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),tag: 0)
         let feedNC = feedCoordinator.feedNC
         feedNC.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.bullet"), tag: 1)
+        let likePostVC = LikePostVC()
+        let likePostNC = UINavigationController(rootViewController: likePostVC)
+        likePostNC.tabBarItem = UITabBarItem(title: "Like posts", image: UIImage(systemName: "hand.thumbsup"), tag: 2)
         
-        tabBar.viewControllers = [profileNav, feedNC]
+        tabBar.viewControllers = [profileNC, feedNC, likePostNC]
         tabBar.selectedIndex = 0
         self.tabBarController = tabBar
         
