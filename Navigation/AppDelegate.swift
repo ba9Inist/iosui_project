@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-//        let navController = UINavigationController(rootViewController: LoginKeyChainVC())
-//        window.rootViewController = navController
-//        window.makeKeyAndVisible()
-        appCoordinator = AppCoordinator(window: window)
-        appCoordinator?.start()
+        let navController = UINavigationController(rootViewController: GeoMapVC())
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+//        appCoordinator = AppCoordinator(window: window)
+//        appCoordinator?.start()
         FirebaseApp.configure()
         return true
         
