@@ -8,11 +8,14 @@
 import UIKit
 import MapKit
 import SnapKit
+import CoreLocation
 
 class GeoMapVC: UIViewController {
     
-    
-    private lazy var novgorodCoordinate = CLLocationCoordinate2D(latitude: 56.3275, longitude: 44.0055)
+    private lazy var selectedPoint: CLLocationCoordinate2D = {
+        let point = CLLocationCoordinate2D()
+        return point
+    }()
     
     private lazy var map: MKMapView = {
         let map = MKMapView()
@@ -22,14 +25,11 @@ class GeoMapVC: UIViewController {
         let span = MKCoordinateSpan(latitudeDelta: 0.08, longitudeDelta: 0.08)
         let region = MKCoordinateRegion(center: customCoordinate, span: span)
         map.setRegion(region, animated: true)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = self.novgorodCoordinate
-        annotation.title = "Нижний Новгород"
-        map.addAnnotation(annotation)
         return map
     }()
     
     private let locationManager = CLLocationManager()
+    private lazy var geoCoder = CLGeocoder()
     
     private lazy var buttonRoute: UIButton = {
         let button = UIButton()
@@ -45,8 +45,11 @@ class GeoMapVC: UIViewController {
         super.viewDidLoad()
         setubViews()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        map.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func setubViews() {
@@ -70,9 +73,13 @@ class GeoMapVC: UIViewController {
     @objc private func toucheButtonRoute() {
         let userCoordinate = map.userLocation.coordinate
         
+        guard isValidCoordinate(selectedPoint) else {
+            print("Не задана точка")
+            return }
+        
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: userCoordinate))
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: novgorodCoordinate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: selectedPoint))
         request.transportType = .any
         request.requestsAlternateRoutes = true
 
@@ -96,10 +103,41 @@ class GeoMapVC: UIViewController {
         }
     }
     
+    @objc func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
+        
+        map.removeAnnotations(map.annotations)
+        map.removeOverlays(map.overlays)
+        let touchPoint = gestureRecognizer.location(in: map)
+        let coordinate = map.convert(touchPoint, toCoordinateFrom: map)
+        selectedPoint = coordinate
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geoCoder.reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first else {
+                if let err = error {
+                    print("Ошибка обратного геокодинга:", err.localizedDescription)
+                }
+                return
+            }
+            annotation.title = placemark.name
+        }
+        map.addAnnotation(annotation)
+        
+    }
+    
+   private func isValidCoordinate(_ coordinate: CLLocationCoordinate2D) -> Bool {
+        return coordinate.latitude != 0 || coordinate.longitude != 0
+    }
+
+
+    
+    
 }
 
 extension GeoMapVC: CLLocationManagerDelegate {
-    
+
 }
 
 extension GeoMapVC: MKMapViewDelegate {
@@ -111,5 +149,22 @@ extension GeoMapVC: MKMapViewDelegate {
             return renderer
         }
         return MKOverlayRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !annotation.isKind(of: MKUserLocation.self) else { return nil }
+        
+        let identifier = "CustomAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
     }
 }
