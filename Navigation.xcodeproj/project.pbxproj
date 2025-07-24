@@ -31,6 +31,7 @@
 		BF6EC98A2E12734B0027578E /* GeoMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EC9892E12734B0027578E /* GeoMapVC.swift */; };
 		BF6F747A2E2FBDC5004776EA /* LoginInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F74792E2FBDC5004776EA /* LoginInspectorTests.swift */; };
 		BF6F747C2E2FBDF4004776EA /* CheckerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F747B2E2FBDF4004776EA /* CheckerMock.swift */; };
+		BF6F747F2E32089A004776EA /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F747E2E32089A004776EA /* PushManager.swift */; };
 		BF6FBDAE2DD5C81B00BCE5A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBDAD2DD5C81B00BCE5A4 /* GoogleService-Info.plist */; };
 		BF6FBDB02DD5F78600BCE5A4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF6FBDAF2DD5F78600BCE5A4 /* FirebaseAuth */; };
 		BF6FBDB22DD5F78600BCE5A4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF6FBDB12DD5F78600BCE5A4 /* FirebaseDatabase */; };
@@ -104,6 +105,7 @@
 		BF6EC9892E12734B0027578E /* GeoMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoMapVC.swift; sourceTree = "<group>"; };
 		BF6F74792E2FBDC5004776EA /* LoginInspectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspectorTests.swift; sourceTree = "<group>"; };
 		BF6F747B2E2FBDF4004776EA /* CheckerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerMock.swift; sourceTree = "<group>"; };
+		BF6F747E2E32089A004776EA /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		BF6FBDAD2DD5C81B00BCE5A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF6FBDB82DDF23E300BCE5A4 /* DirectoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryVC.swift; sourceTree = "<group>"; };
 		BF6FBDBD2DDF348400BCE5A4 /* AccessPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPhoto.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				3601A2A528490DDF000D261A /* Products */,
 				BF6FBDB52DDF174500BCE5A4 /* DirectoryModule */,
 				BF6FBDBC2DDF344600BCE5A4 /* SecretModule */,
+				BF6F747D2E320883004776EA /* PushService */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -251,6 +254,14 @@
 				BF6F747B2E2FBDF4004776EA /* CheckerMock.swift */,
 			);
 			path = NavigationTests;
+			sourceTree = "<group>";
+		};
+		BF6F747D2E320883004776EA /* PushService */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F747E2E32089A004776EA /* PushManager.swift */,
+			);
+			path = PushService;
 			sourceTree = "<group>";
 		};
 		BF6FBDA52DD5BFC600BCE5A4 /* LoginAuth */ = {
@@ -539,6 +550,7 @@
 				BFDE13082DA6614E0089C8D3 /* FeedModel.swift in Sources */,
 				BFDE13242DB643B40089C8D3 /* LoginCoordinator.swift in Sources */,
 				BFDE13052DA654E30089C8D3 /* CustomButton.swift in Sources */,
+				BF6F747F2E32089A004776EA /* PushManager.swift in Sources */,
 				BFDE13262DB643D90089C8D3 /* ProfileCoordinator.swift in Sources */,
 				BFF0CF222DEF256200B095E4 /* CoreDataManager.swift in Sources */,
 				3601A2C028495339000D261A /* PostViewController.swift in Sources */,

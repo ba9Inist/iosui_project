@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        appCoordinator = AppCoordinator(window: window)
 //        appCoordinator?.start()
         FirebaseApp.configure()
+        
+        LocalNotificationsService.shared.checkAccess()
+        
         return true
         
         
